@@ -2,22 +2,29 @@ package collections;
 
 public class Words{
 	private String phrase;
+	private String[] array;
+	private String clean;
 
-	public Words(String newphrase){
-		this.phrase = newphrase;
+	public Words(String phrase){
+
+		this.phrase = phrase;
+		this.phrase = this.phrase.toUpperCase();
+		this.phrase = this.phrase.replaceAll("[[\\.\\?\\!\\,\\;\\:\\{\\}\\(\\)\\']]", "");
+		this.array = this.phrase.split(" +");
+
+		
 	}
-	public String getPhrase (){
+
+	public String getPhrase(){
 		return phrase;
 	}
-	public void SetPhrase(String newphrase){
-		this.phrase = newphrase;
+
+	public String[] getArray (){
+		// String[] arrays = this.array 
+		return array;
 	}
-	@Override
-	public String toString(){
-		return "Words{" +
-		phrase + "phrase" +
-		 "}";
-	}
+
+
 
 }
 
